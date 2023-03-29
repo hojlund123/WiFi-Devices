@@ -1,4 +1,7 @@
-# Work in progress
+# WiFi Devices
+Webapp written in Flask, used to scan the local network to show who is online.
+
+### Work in progress
 
 This code uses the nmap library to scan all hosts on the 192.168.1.0/24 network and print out the IP addresses of all devices that are currently online.
 

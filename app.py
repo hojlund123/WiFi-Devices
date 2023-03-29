@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import nmap
+import socket
 
 app = Flask(__name__)
 
@@ -11,7 +12,11 @@ def index():
     devices = []
     for host in nm.all_hosts():
         if nm[host]['status']['state'] == 'up':
-            devices.append(host)
+            try:
+                hostname = socket.gethostbyaddr(host)[0]
+            except socket.herror:
+                hostname = 'unknown'
+            devices.append((host, hostname))
 
     return render_template('devices.html', devices=devices)
 

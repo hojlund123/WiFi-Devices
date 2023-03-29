@@ -7,7 +7,7 @@
     <h1>Online Devices</h1>
     <ul>
     {% for device in devices %}
-        <li>{{ device }}</li>
+        <li>{{ device[0] }} - {{ device[1] }}</li>
     {% endfor %}
     </ul>
 </body>

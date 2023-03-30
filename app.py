@@ -14,7 +14,7 @@ def index():
     arp_request = Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst=network)
 
     # Send the ARP request and wait for the response
-    responses, _ = srp(arp_request, timeout=1, verbose=False)
+    responses, _ = srp(arp_request, timeout=1, verbose=True)
 
     # Parse the responses and extract the device information
     devices = []

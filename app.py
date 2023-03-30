@@ -69,7 +69,7 @@ def get_os_info(ip_address):
             ip = ether["IP"]
             if "TCP" in ip:
                 tcp = ip["TCP"]
-                os_info.add((tcp["window"], tcp["flags"], tcp["options"]))
+                os_info.add((tcp[0], tcp[1], tcp[2]))
 
     # Convert the operating system information to a string representation
     os_str = ""

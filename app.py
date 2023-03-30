@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from scapy.all import ARP, Ether, srp
+from scapy.layers.l2 import Ether
 import socket
 import os
 from mac_vendor_lookup import MacLookup

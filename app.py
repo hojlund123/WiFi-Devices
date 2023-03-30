@@ -47,7 +47,7 @@ def get_os_info(ip_address):
     iface = "wlp1s0"
 
     # Define the number of packets to capture
-    num_packets = 100
+    num_packets = 2
 
     # Define the filter expression to capture packets for the specified IP address
     filter_expr = f"host {ip_address}"

@@ -66,8 +66,10 @@ def get_os_info(ip_address):
     for packet in packets:
         ethers = Ether(packet.raw())
         if "IP" in ethers:
+            print("IP found in ethers")
             ip = ethers["IP"]
             if "TCP" in ip:
+                print("TCP found in IP")
                 tcp = ip["TCP"]
                 os_info.add((tcp["window"], tcp["flags"], tcp["options"]))
 

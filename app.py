@@ -54,7 +54,7 @@ def get_os_info(ip_address):
     filter_expr = f"host {ip_address}"
 
     # Capture the packets and save them to a temporary file
-    capture_file = f"tmp/capture_{ip_address}.pcap"
+    capture_file = f"/tmp/capture_{ip_address}.pcap"
     os.system(f"tcpdump -i {iface} -c {num_packets} -w {capture_file} {filter_expr}")
 
     # Read the captured packets from the file

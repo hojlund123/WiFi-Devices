@@ -2,13 +2,27 @@
 <html>
 <head>
     <title>Online Devices</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Online Devices</h1>
-    <ul>
-    {% for device in devices %}
-        <li>{{ device[0] }} - {{ device[1] }}</li>
-    {% endfor %}
-    </ul>
+    <div class="container">
+        <h1>Online Devices</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>IP Address</th>
+                    <th>Device Name</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for device in devices %}
+                <tr>
+                    <td>{{ device[0] }}</td>
+                    <td>{{ device[1] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

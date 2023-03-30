@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from scapy.all import ARP, Ether, srp
+from scapy.all import ARP, srp
 from scapy.layers.l2 import Ether
 import socket
 import os
@@ -48,7 +48,7 @@ def get_os_info(ip_address):
     iface = "wlp1s0"
 
     # Define the number of packets to capture
-    num_packets = 2
+    num_packets = 50
 
     # Define the filter expression to capture packets for the specified IP address
     filter_expr = f"host {ip_address}"
@@ -69,7 +69,7 @@ def get_os_info(ip_address):
             ip = ether["IP"]
             if "TCP" in ip:
                 tcp = ip["TCP"]
-                os_info.add((tcp[0], tcp[1], tcp[2]))
+                os_info.add((tcp["window"], tcp["flags"], tcp["options"]))
 
     # Convert the operating system information to a string representation
     os_str = ""

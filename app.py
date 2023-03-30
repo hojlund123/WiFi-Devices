@@ -64,9 +64,9 @@ def get_os_info(ip_address):
     # Extract the operating system information from the packets
     os_info = set()
     for packet in packets:
-        ether = Ether(packet.raw())
-        if "IP" in ether:
-            ip = ether["IP"]
+        ethers = Ether(packet.raw())
+        if "IP" in ethers:
+            ip = ethers["IP"]
             if "TCP" in ip:
                 tcp = ip["TCP"]
                 os_info.add((tcp["window"], tcp["flags"], tcp["options"]))

@@ -44,7 +44,7 @@ def index():
 
 def get_os_info(ip_address):
     # Define the network interface to capture packets on
-    iface = "wlan0"
+    iface = "wlp1s0"
 
     # Define the number of packets to capture
     num_packets = 100

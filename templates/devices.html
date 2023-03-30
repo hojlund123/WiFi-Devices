@@ -11,16 +11,22 @@
             <thead>
                 <tr>
                     <th>IP Address</th>
-                    <th>Device Name</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for device in devices %}
-                <tr>
+                    <th>Hostname</th>
+                    <th>MAC Address</th>
+                    <th>Vendor</th>
+                    <th>Operating System</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for device in devices %}
+                  <tr>
                     <td>{{ device[0] }}</td>
                     <td>{{ device[1] }}</td>
-                </tr>
-            {% endfor %}
+                    <td>{{ device[2] }}</td>
+                    <td>{{ device[3] }}</td>
+                    <td>{{ device[4] }}</td>
+                  </tr>
+                  {% endfor %}
             </tbody>
         </table>
     </div>

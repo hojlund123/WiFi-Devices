@@ -1,5 +1,5 @@
 # WiFi Devices
-Webapp written in Flask, used to scan the local network to show who is online.
+Web app written in Flask, used to scan the local network to show who is online.
 
 ### Work in progress
 

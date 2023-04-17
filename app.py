@@ -65,13 +65,14 @@ def get_os_info(ip_address):
     os_info = set()
     for packet in packets:
         ethers = Ether(packet.raw())
+        print("IP check.....")
         if "IP" in ethers:
             print("IP found in ethers")
             ip = ethers["IP"]
             if "TCP" in ip:
                 print("TCP found in IP")
                 tcp = ip["TCP"]
-                os_info.add((tcp["window"], tcp["flags"], tcp["options"]))
+                os_info.add((tcp["flags"], tcp["options"]))
 
     # Convert the operating system information to a string representation
     os_str = ""

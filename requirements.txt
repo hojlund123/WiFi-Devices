@@ -1,5 +1,4 @@
 flask
-nmap
-socket
+python3-nmap
 scapy
 mac-vendor-lookup
